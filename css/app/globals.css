@@ -1,0 +1,24 @@
+:root {
+    --primary-color: #6127C7; /* Purple */
+    --secondary-color: #A02BFA; /* Bright purple */
+    --text-primary-color: #28027D; /* Dark purple */
+    --input-fill-color: #F9E1FD; /* Light grey */
+    --main-background-color:#FAFBFF;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+    font-family: Poppins, sans-serif;
+    display: flex; /* Use flexbox to divide the body into two parts */
+}
+
+
+
+.main-content {
+    width: 80%; /* Main content takes the remaining 80% */
+    padding: 2rem;
+    background-color: var(--main-background-color); /* Example background color */
+    height: 100vh;
+    overflow-y: auto;
+}

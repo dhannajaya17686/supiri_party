@@ -1,0 +1,42 @@
+@import 'globals.css';
+
+nav {
+    width: 20%; 
+    background-color: #fff; 
+    height: 100vh; 
+    padding-left: 2rem;
+    padding: 0.5rem;
+}
+
+nav .top-left-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-direction: row; 
+    text-align: center;
+    margin-top: 0.5rem; 
+}
+
+nav .top-left-box.logo{
+    position: relative;
+    width: 4vw; 
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+nav .top-left-box.text{
+    position: relative;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: inline-block;
+    font-size: 2rem; /* Responsive font size */
+}
+
+nav .link-box{
+    position: relative;
+    margin-top: 5rem;
+
+}
