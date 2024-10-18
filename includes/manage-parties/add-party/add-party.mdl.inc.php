@@ -28,4 +28,6 @@ function create_new_party(mysqli $conn, $date, $location, $total_cost, $balance,
     }
     $stmt->close();
 }
+
+
 ?>

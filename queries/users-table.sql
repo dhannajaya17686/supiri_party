@@ -1,4 +1,8 @@
-ALTER TABLE `party`.`users` 
-ADD COLUMN `email` VARCHAR(100) NULL AFTER `username`,
-ADD COLUMN `password` VARCHAR(100) NULL AFTER `email`,
-ADD COLUMN `phone` VARCHAR(45) NULL AFTER `password`;
+CREATE TABLE `party`.`users` (
+  `username` VARCHAR(45) NOT NULL,
+  `fullname` VARCHAR(100) NULL,
+  `email` VARCHAR(100) NULL,
+  `password` VARCHAR(100) NULL,
+  `phone` VARCHAR(45) NULL,
+  PRIMARY KEY (`username`)
+);
