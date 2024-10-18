@@ -1,15 +1,20 @@
 <?php 
+    //login check essentials
     require_once "includes/sessions.config.inc.php";
     require_once "includes/log-in/log-in.view.inc.php";
+    require_once 'includes/log-in/log-in.cntr.inc.php';
+    require_once 'config/constants.config.php';
+    //not letting the user acess if authenticated
+    if(is_user_authenticated()){header('Location: '.ROOT_URL.'app/index.php');exit();};
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-      <title>Supiri Party Login</title>
+      <title>SP | Login</title>
       <link rel="stylesheet" href="css/log-in.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
-      
+      <script src="js/funcs/validateLogInInput.js" defer></script>
 </head>
 
 <body>      
@@ -23,24 +28,27 @@
 <div class="main-form">
       <div class="main-form-main-text">Welcome back!</div>
       <div class="main-form-sub-text">Lets Get the party started</div>
-      <form action="logic/log-in.logic.php"" method="post">
-
-            <label for="first">Username:</label>
-            <input type="text" id="first" name="username" placeholder="Enter your Username" required>
-
-            <label for="password"> Password: </label>
-            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
-            
+      <form action="logic/log-in.logic.php" method="post" onsubmit="return validateLogInInput()">
+            <div class="main-form-input-group">          
+                  <label for="first">Username:</label>
+                  <input type="text" id="username" name="username" placeholder="Enter your Username">
+                  <span id="username_error" class="passoword-error"></span>
+            </div>
+            <div class="main-form-input-group">           
+                  <label for="password"> Password: </label>
+                  <input type="password" id="password" name="password" placeholder="Enter your Password">
+                  <span id="password_error" class="passoword-error"></span>
+            </div>
             <label for="role">Select Role:</label>
             <div class="" style="width:200px;">
-                  <select name="role" id="role" class="form-control"  required>
+                  <select name="role" id="role" class="form-control">
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                         <option value="employee">Employee</option>
                   </select>
             </div>
             <div class="wrap">
-                  <button type="submit" onclick="">Log In</button>
+                  <button type="submit" id="log-in-form-submit"">Log In</button>
             </div>
             <p>Not registered?
             <a href="sign-up.php" style="text-decoration: none;"> Create an account</a>

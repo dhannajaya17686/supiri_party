@@ -1,9 +1,9 @@
 <?php
 
 function check_login_errors(){
-    if (isset($_SESSION['main-form-errors_login'])) {
+    if (isset($_SESSION['errors_login'])) {
         $errors = $_SESSION["errors_login"];
-        echo '<ul class="error-list" style="">';
+        echo '<ul class="main-form-error-list" style="">';
         foreach ($errors as $error) {
             echo '<li>' . $error . '</li>';
         }

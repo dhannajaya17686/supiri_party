@@ -126,7 +126,6 @@ body{
 .main-form input {
     display: block;
     width: 100%;
-    margin-bottom: 3rem;
     background-color: var(--input-fill-color);
     margin-top: 0.5rem;
     padding: 1rem;
@@ -203,3 +202,20 @@ body{
     list-style:none ;
 }
 
+.main-form-input-group{
+    margin-bottom: 3rem;
+    align-items: start;
+    position: relative;
+}
+
+.passoword-error{
+    width: 100%;
+    text-align: left;
+    align-items: start;
+    position: absolute;
+    margin-top: 0.5rem;
+    left: 0rem;
+    right:20rem;
+    color: #f44336;
+    font-size: 1.2rem;
+}
