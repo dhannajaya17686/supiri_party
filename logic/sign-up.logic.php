@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         require_once '../includes/sign-up/sign-up.mdl.inc.php';
         require_once '../includes/sign-up/sign-up.cntr.inc.php';
         require_once '../includes/sign-up/sign-up.view.inc.php';
+        require_once '../config/constants.config.php';
         $errors = [];
         //ERROR HANDELLERS
         if(is_input_empty($username,$password,$email,$phone)){ 

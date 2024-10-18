@@ -13,6 +13,7 @@
 <head>
       <title>SP | Login</title>
       <link rel="stylesheet" href="css/log-in.css">
+      <link rel="icon" type="image/x-icon" href="assets/img/cake.svg">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
       <script src="js/funcs/validateLogInInput.js" defer></script>
 </head>
@@ -32,7 +33,7 @@
             <div class="main-form-input-group">          
                   <label for="first">Username:</label>
                   <input type="text" id="username" name="username" placeholder="Enter your Username">
-                  <span id="username_error" class="passoword-error"></span>
+                  <span id="username_error" class="password-error"></span>
             </div>
             <div class="main-form-input-group">           
                   <label for="password"> Password: </label>

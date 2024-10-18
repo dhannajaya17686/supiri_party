@@ -188,18 +188,17 @@ body{
 .main-form-error-list {
     width: 100%;
     color: #f44336; 
-    align-items: center;
+    align-items: start;
     font-weight: 400;
+    font-size: 1.5rem;
     list-style-type: none;
     margin-top: 3rem;
     margin-bottom: 2px;
     display: block;
+    gap: 0.5rem;
     text-align: left;
-    padding: 1rem;
-    background-color: #ffe6e6; 
-    border-radius: 0.8rem;
-    border: 1px solid #f44336; 
-    list-style:none ;
+    padding: 1rem;  
+    list-style:disc;
 }
 
 .main-form-input-group{
@@ -208,7 +207,7 @@ body{
     position: relative;
 }
 
-.passoword-error{
+.password-error{
     width: 100%;
     text-align: left;
     align-items: start;
@@ -219,3 +218,168 @@ body{
     color: #f44336;
     font-size: 1.2rem;
 }
+
+.sign-up-main-container{
+    display: flex;
+    height: 100vh;
+}
+
+.sign-up-main-container-left-side {
+    width: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.sign-up-main-container-left-side img {
+    position: absolute;
+    max-width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 1;
+    filter: blur(0.2rem);
+}
+
+.sign-up-main-container-left-side-header{
+    padding-bottom: 20rem;
+}
+
+.sign-up-main-container-left-side h1 {
+    position: relative;
+    margin-top: 2.2rem;
+    z-index: 2;
+    display: block;
+    padding-left: 2.5rem;
+    text-align: left;
+    color: #fff;
+    align-items: start;
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+
+/* Right side with the form */
+.sign-up-main-container-right-side {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.main-signup-form{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-left: 5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px; 
+    transition: transform 0.2s;
+    width: 90%;
+    height: 90%;
+    margin-top: 2rem;
+    max-width: 500px;
+    text-align: center;
+}
+
+.main-signup-form label {
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2px;
+    text-align: left;
+    color: var(--secondary-color);
+    font-size:1.3rem;
+    font-weight: 500;
+}
+
+.main-signup-form input {
+    display: block;
+    width: 100%;
+    background-color: var(--input-fill-color);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+    color: var(--text-primary-color);
+    font-size: 1.2rem; 
+}
+
+.main-signup-form select{
+    width:26vw;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    background-color: var(--input-fill-color);
+    color: var(--text-primary-color);
+    font-size: 1.2rem;
+}
+
+.main-signup-form button{
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: 0.5rem;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    width: 26vw;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.main-signup-form button:hover{
+    background-color: var(--secondary-color);
+}
+
+.main-signup-input-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.main-signup-input-group input{
+    flex:1;
+    width: 70%;
+    background-color: var(--input-fill-color);
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+    color: var(--text-primary-color);
+    font-size: 1.2rem; 
+}
+
+.main-signup-input-group button{
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: 0.5rem;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    background-color: var(--primary-color);
+    width: auto;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
