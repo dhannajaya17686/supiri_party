@@ -11,14 +11,15 @@ body {
     line-height: normal;
     font-family: Poppins, sans-serif;
     display: flex; /* Use flexbox to divide the body into two parts */
+    height: 100vh;
+    padding: 0;
 }
 
 
 
 .main-content {
+    height: 100vh;
     width: 80%; /* Main content takes the remaining 80% */
     padding: 2rem;
     background-color: var(--main-background-color); /* Example background color */
-    height: 100vh;
-    overflow-y: auto;
 }

@@ -48,7 +48,7 @@
                         <option value="employee">Employee</option>
                   </select>
             </div>
-            <div class="wrap">
+            <div class="main-form-wrap">
                   <button type="submit" id="log-in-form-submit"">Log In</button>
             </div>
             <p>Not registered?

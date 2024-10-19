@@ -16,7 +16,7 @@ function get_user(object $conn, string $username, string $role) {
     // Initialize query and parameters based on the role
     switch ($role) {
         case 'admin':
-            $query = "SELECT admin_id AS id, username, 'admin' AS role FROM admin WHERE username = ?";
+            $query = "SELECT admin_id AS id, username,fullname, 'admin' AS role FROM admin WHERE username = ?";
             break;
         case 'employee':
             $query = "SELECT emp_id AS id, username, 'employee' AS role FROM employee WHERE username = ?";

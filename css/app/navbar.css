@@ -1,42 +1,188 @@
 @import 'globals.css';
 
 nav {
-    width: 20%; 
-    background-color: #fff; 
-    height: 100vh; 
-    padding-left: 2rem;
-    padding: 0.5rem;
+    width: 20%;
+    background-color: #fff;
+    padding-top: 0.5rem; /* Adjusted padding */
+    display: flex;
+    padding-left: 0rem;
+    flex-direction: column; /* Stack items vertically */
+    align-items: start;
+    justify-content: space-between; 
 }
 
-nav .top-left-box{
+nav .top-left-box {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row; /* Stack logo and text vertically */
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
     position: relative;
     top: 0;
-    left: 0;
-    flex-direction: row; 
-    text-align: center;
-    margin-top: 0.5rem; 
+    right: 0;
+    padding: 0.2rem;    /* Added margin below top-left-box */
 }
 
-nav .top-left-box.logo{
-    position: relative;
-    width: 4vw; 
+nav .top-left-box.logo {
+    width: 4vw;
     height: auto;
-    margin-bottom: 0.5rem;
 }
 
-nav .top-left-box.text{
-    position: relative;
+nav .top-left-box.text {
     font-weight: 600;
     color: var(--primary-color);
-    display: inline-block;
-    font-size: 2rem; /* Responsive font size */
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
 }
 
-nav .link-box{
-    position: relative;
-    margin-top: 5rem;
+nav .link-box {
+    margin-top: 0.2rem;
+    text-align: left;  
+    width: 90%;
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1;
+}
 
+nav .link-box ul {
+    margin-bottom: 1rem;
+    list-style-type:none;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+nav .link-box ul li{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav .link-box ul li img {
+    width: 1.5vw;
+    height: 3vh;
+    margin-right: 1rem; /
+}
+
+nav .link-box ul li p {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    width: 90%;
+    margin: 0; 
+
+}
+
+nav .link-box ul hr{
+    background-color: #aea2c7;
+    width: 90%;
+    align-items: center;
+    border-top: 1px solid #aea2c7;
+    height: 1px;
+    border: none;
+}
+
+nav .link-box ul li:hover{
+    background-color: var(--input-fill-color);
+}
+
+nav .profile-box{
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    bottom: 0;
+    left: 0;
+    margin: 1.5rem;
+    background-color: var(--primary-color);
+    border-radius: 0.8rem;
+    margin-top: 0.5rem;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+nav .profile-box:hover{
+    background-color: var(--secondary-color);
+}
+
+nav .profile-box .profile-circle{
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    border-radius:10rem;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    height: 4rem;
+    width: 4rem;
+    background-color:#fff;
+}
+
+nav .profile-box .profile-circle p{
+    text-align: center;
+    font-size: 1.8rem;
+    align-items: center;
+    margin:1.2rem;
+    margin-left: 1.4rem;
+    transition: background-color 0.3s ease;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+nav .profile-box .profile-details{
+    margin-right: 1.2rem;
+    text-align: left;
+    align-items: start;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: background-color 0.3s ease;
+}
+
+nav .profile-box .profile-details .name{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+nav .profile-box .profile-details .role{
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+
+nav .log-out-box {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    bottom: 0;
+    left: 0;
+    margin: 1.5rem;
+}
+
+nav .log-out-box button{
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+nav .log-out-box button:hover{
+    background-color: var(--secondary-color);
 }
