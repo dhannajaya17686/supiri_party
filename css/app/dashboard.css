@@ -1,0 +1,194 @@
+@import 'globals.css';
+
+.main-content .user-common-greet-box{
+    position: relative;
+    top: 0;
+    bottom: 0;
+}
+
+.main-content .user-common-greet-box h1{
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.main-content .user-common-stat-box{
+    padding: 2rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row; 
+    align-items: start;
+    justify-content: space-evenly;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .user-common-stat-box .stat-item{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content .user-common-stat-box .stat-item:nth-child(1),
+.main-content .user-common-stat-box .stat-item:nth-child(2) {
+    border-right: 1px solid #cacaca;
+    border-width: 80%;
+}
+
+.main-content .user-common-stat-box .stat-item img{
+    width: 10vw;
+    height: 14vh;
+}
+
+.main-content .user-common-stat-box .stat-item .details{
+    width: 100%;
+    margin-left: 0.5rem;
+    
+}
+
+.main-content .user-common-stat-box .stat-item .details .title{
+    font-size: 1.1rem;
+    color: #6b6b6b;
+    margin: 0;
+}
+
+.main-content .user-common-stat-box .stat-item .details .data{
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+
+/*-------------------------------UPCOMING PARTIES-----------------------*/
+
+.main-content .upcoming-parties-admin-box{
+    margin-right: 2rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
+    margin-top: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .upcoming-parties-admin-box .action-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-content .upcoming-parties-admin-box .action-row h3{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.main-content .upcoming-parties-admin-box .action-row .details-btn {
+    background-color: var(--primary-color); /* Purple button */
+    color: white;
+    padding: 1rem;
+    margin: 1.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.main-content .upcoming-parties-admin-box .action-row .details-btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+.main-content .upcoming-parties-admin-box .party-table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/*----------------------------table component styling--------------*/
+
+
+
+.party-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  /* Set fixed height for the table body and enable scroll */
+ .party-table tbody {
+    display: block;
+  }
+  
+  /* Ensure the header stays fixed and aligned with body rows */
+   .party-table thead,
+  .party-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .party-table th,
+  .party-table td {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .party-table th {
+    font-weight: bold;
+    color: #6b6b6b;
+  }
+  
+  .party-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Customer image styling */
+  .customer-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Status styles */
+  .status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .completed {
+    background-color: green;
+  }
+  
+  .pending {
+    background-color: blue;
+  }
+  
+  .completing {
+    background-color: red;
+  }
+  
+  /* Details button styling */
+  .details-btn {
+    background-color: var(--primary-color); /* Purple button */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  

@@ -19,7 +19,9 @@
     <link rel="icon" type="image/x-icon" href="../assets/img/cake.svg">
     <link rel="stylesheet" href="../css/app/globals.css" />
     <link rel="stylesheet" href="../css/app/navbar.css" />
+    <link rel="stylesheet" href="../css/app/dashboard.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=straight" />
     <title>SP | Dashboard</title>
 </head>
 <body>
