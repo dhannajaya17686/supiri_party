@@ -17,46 +17,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>Sudage Party</td>
-                        <th>Birthday</th>
-                        <td><img src="../assets/icons/flash-circle.png" alt="Alex Noman" class="customer-img" />Alex Noman</td>
-                        <td>1 days </td>
-                        <td><span class="status completed"></span> Completed</td>
-                        <td>$ 35.44</td>
-                        <td><button class="details-btn">Details</button></td>
-                    </tr>
-                    <?php
-        // Assuming $conn is your database connection
-        $parties = get_all_parties($conn); // Fetch parties from the function
-        
-        if (!empty($parties)) {
-            foreach ($parties as $index => $party) {
-                // Calculate the status class
-                $status_class = $party['status'] ? 'completed' : 'pending';
-                // Set the status text
-                $status_text = $party['status'] ? 'Completed' : 'Pending';
-                
-                // Using heredoc syntax for cleaner HTML output
-                $row = <<<HTML
-                <tr>
-                    <td>{sprintf('%02d', $index + 1)}</td>
-                    <td>{$party['party_name']}</td>
-                    <th>{$party['party_type']}</th>
-                    <td><img src="../assets/icons/flash-circle.png" alt="Razib Rahman" class="customer-img" />{$party['customer_name']}</td>
-                    <td>{$party['remaining_time']}</td>
-                    <td><span class='status {$status_class}'></span> {$status_text}</td>
-                    <td>{$party['balance']}</td>
-                    <td><button class='details-btn'>Details</button></td>
-                </tr>
-HTML;
-                echo $row; // Output the row
-            }
-        } else {
-            echo "<tr><td colspan='8'>No parties found.</td></tr>";
-        }
-        ?>          
+                <?php
+                    
+                    $parties = get_all_parties($conn);
+
+                    if (!empty($parties)) {
+                        $count = 0;
+                        foreach ($parties as $index => $party) {
+                            if ($count >= 3) {
+                                break; // Stop after 3 rows
+                            }
+                            $status_class = $party['status'] ? 'completed' : 'pending';
+                            $status_text = $party['status'] ? 'Completed' : 'Pending';
+                            ?>
+                            <tr>
+                                <td><?php echo $index + 1; ?></td>
+                                <td><?php echo $party['party_name']; ?></td>
+                                <td><?php echo $party['party_type']; ?></td>
+                                <td><img src="../assets/icons/flash-circle.png" alt="Razib Rahman" class="customer-img" /> <?php echo $party['customer_name']; ?></td>
+                                <td><?php echo $party['remaining_time']; ?></td>
+                                <td><span class="status <?php echo $status_class; ?>"></span> <?php echo $status_text; ?></td>
+                                <td><?php echo $party['balance']; ?></td>
+                                <td><button class="details-btn">Details</button></td>
+                            </tr>
+                            <?php
+                            $count++;
+                        }
+                    } else {
+                        echo "<tr><td colspan='8'>No parties found.</td></tr>";
+                    }
+                ?>
+      
                 </tbody>    
             </table>
 

@@ -3,10 +3,8 @@
 
 function get_all_parties(mysqli $conn): array {
     // Join 'parties' with 'users' to get customer name and fetch necessary columns
-    $query = "
-        SELECT p.*, u.username AS customer_name 
-        FROM parties p 
-        JOIN users u ON p.customer_id = u.user_id";
+    $query = "SELECT p.*, u.username AS customer_name FROM parties p JOIN users u ON p.customer_id = u.user_id ORDER BY p.date ASC;";
+
 
     $stmt = $conn->prepare($query);
     $stmt->execute();
