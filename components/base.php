@@ -8,6 +8,7 @@
     require_once '../includes/log-in/log-in.cntr.inc.php';
     require_once '../includes/stat-req/stat-req.cntr.inc.php';
     require_once '../config/database.config.php';
+    require_once '../includes/manage-tasks/get-tasks/get-all-tasks.cntr.inc.php';
     //Get party information
     require_once '../includes/manage-parties/get-parties/get-all-parties.cntr.inc.php';
     if(!is_user_authenticated()){
