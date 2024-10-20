@@ -12,7 +12,7 @@
 }
 
 .main-content .user-common-stat-box{
-    padding: 2rem;
+    padding: 1rem;
     margin-right: 2rem;
     border-radius: 2rem;
     display: flex;
@@ -192,3 +192,109 @@
     background-color: var(--secondary-color);
   }
   
+/*------------------------ADMIN TSAKS VIEW CSS ------------------*/
+
+.main-content .assigned-tasks-admin-box{
+  margin-right: 2rem;
+  border-radius: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: start;
+  margin-top: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .assigned-tasks-admin-box .action-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-content .assigned-tasks-admin-box .action-row h3{
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-content .assigned-tasks-admin-box .action-row .details-btn {
+  background-color: var(--primary-color); /* Purple button */
+  color: white;
+  padding: 1rem;
+  margin: 1.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  
+.main-content .assigned-tasks-admin-box .action-row .details-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.main-content .assigned-tasks-admin-box .task-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:70%;
+  margin-bottom: 1rem;
+  align-items: start;
+
+}
+
+.main-content .assigned-tasks-admin-box .task-list .task-box{
+  display: flex;
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  border-left:0.5rem solid var(--primary-color);
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  width: 90%;
+}
+
+
+
+.main-content .assigned-tasks-admin-box .task-box .title {
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  margin: 0;
+  color: var(--prime-text-color);
+}
+
+.main-content .assigned-tasks-admin-box .task-list .task-box .detail-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content .assigned-tasks-admin-box .task-list .task-box .detail-row .status {
+  font-size: 0.8rem;
+  display: flex;
+  color: #6b6b6b;
+  margin: 0;
+  text-align: left;
+}
+
+.main-content .assigned-tasks-admin-box .task-list .task-box .detail-row .assigned-to {
+  font-size: 0.8rem;
+  margin: 0;
+  display: flex;
+  text-align: right;
+  color: #6b6b6b;
+}
+
+/* Hover effect for task boxes */
+.main-content .assigned-tasks-admin-box .task-box:hover {
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease;
+}
