@@ -1,5 +1,7 @@
 <?php require_once("../components/base.php");?>
-
+<head>
+    <title>SP | Dashboard</title>
+</head>
 <body>
     
     <div class="main-content">

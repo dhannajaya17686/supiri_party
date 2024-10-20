@@ -1,0 +1,81 @@
+@import 'globals.css';
+
+.main-content .manage-staff-box{
+    margin-right: 2rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
+    margin-top: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .upcoming-parties-admin-box .action-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-content .manage-staff-box table tbody td .details-btn {
+    background-color: green; /* Purple button */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.main-content .manage-staff-box table tbody td .details-btn:hover {
+    background-color: lightseagreen;
+}
+
+.main-content .manage-staff-box table tbody td .details-btn-delete {
+    background-color: red; /* Purple button */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+.main-content .manage-staff-box table tbody td .details-btn-delete:hover {
+    background-color: lightcoral;
+}
+
+.main-content .manage-staff-box .user-common-greet-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Vertically centers items */
+    padding: 1rem; /* Adds padding around the box */
+}
+
+.main-content .manage-staff-box .user-common-greet-box h1 {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0; /* Removes default margin */
+    padding-right: 1rem; /* Space between text and button */
+    flex-grow: 1; /* Takes available space */
+}
+
+.main-content .manage-staff-box .user-common-greet-box .details-btn {
+    padding: 0.8rem 1.5rem; /* Button padding */
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.main-content .manage-staff-box .user-common-greet-box .details-btn:hover {
+    background-color: #5a4cae; /* Darker color on hover */
+}

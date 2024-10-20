@@ -9,27 +9,78 @@
     require_once '../includes/manage-staff/view-staff.cntr.inc.php';
     require_once '../includes/manage-staff/edit-staff.view.inc.php';
     require_once '../includes/manage-staff/delete-staff.view.inc.php';
+    require_once '../components/base.php';
     
 ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pop-up.css" type="text/css">
     <script src="../js/ui/togglePopUp.js" defer></script>
     <script src="../js/ui/editWindowStaff.js" defer></script>
     <script src="../js/funcs/generateUserName.js" defer></script>
     <script src="../js/ui/confirmDelete.js" defer></script>
-    <title>Manage Staff</title>
+    <title>SP | Manage Staff</title>
 </head>
 <body>
-<button class="btn-open-popup" onclick="togglePopup()">
-      Add new Staff members
-      </button>
+    <div class="main-content">
+        <!--The component to add the title-->    
+        <div class="user-common-greet-box">
+            <h1>Manage Staff Members<span style="margin-left: 1.5rem;"></span>👨🏻</h1>
+            <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/parties.php"; ?>'">Add new tasks</button>
+        </div>
+        <!--Component to render all employees-->
+        <div class="manage-staff-box">
+        <table class="party-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Full Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    
+                    $employee_list = request_all_staff_detail($conn);
 
+                    if (!empty($employee_list)) {
+                        $count = 0;
+                        foreach ($employee_list as $index => $employee) {
+                            ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($employee['username']); ?></td>
+                                <td><?php echo htmlspecialchars($employee['email']); ?></td>
+                                <td><?php echo htmlspecialchars($employee['phone']); ?></td>
+                                <td><?php echo htmlspecialchars($employee['fullname']); ?></td>
+                                <td>
+                                    <button class="details-btn">Edit</button>
+                                    <form method="POST" action="../logic/staff-logic/delete-staff.logic.php" style="display:inline;" onsubmit="return confirmDelete('<?php echo $employee['username']; ?>');">
+                                        <input type="hidden" name="username" value="<?php echo htmlspecialchars($employee['username']); ?>">
+                                        <button type="submit" class="details-btn-delete">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php
+                            $count++;
+                        }
+                    } else {
+                        echo "<tr><td colspan='8'>No parties found.</td></tr>";
+                    }
+                ?>
       
-      <div id="popupOverlay" class="overlay-container ">
+                </tbody>    
+            </table>
+            <?php edit_staff_creation_errors();show_delete_success() ?>
+        </div>
+    </div>
+    <!--
+    <button class="btn-open-popup" onclick="togglePopup()">
+      Add new Staff members
+    </button>
+-->
+      
+    <!--<div id="popupOverlay" class="overlay-container ">
         <div class="popup-box">
             <h2 style="color: green;">Add Staff Members </h2>
             <form class="form-container" action="../logic/staff-logic/add-staff.logic.php" method="post">
@@ -82,8 +133,10 @@
         
         
     </table>
-    <?php?>
+    <?php ?>
+        -->
     <!-- Pop-up Edit Form (Hidden by default) -->
+     <!--
             <h2>Edit Employee</h2>
             <form id="editForm" method="post" action="../logic/staff-logic/edit-employee.logic.php">
                 <input type="hidden" id="edit-username" name="username">
@@ -100,7 +153,7 @@
                 <button type="submit">Save Changes</button>
             </form>
         <?php edit_staff_creation_errors();show_delete_success() ?>
-        
+        -->
 
 </body>
 </html>
