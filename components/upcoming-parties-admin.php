@@ -27,29 +27,36 @@
                         <td>$ 35.44</td>
                         <td><button class="details-btn">Details</button></td>
                     </tr>
-                    <tr>
-                                <td>02</td>
-                                <td>Sudage Party</td>
-                                <th>Birthday</th>
-                                <td><img src="../assets/icons/flash-circle.png" alt="Razib Rahman" class="customer-img" />Razib Rahman</td>
-                                <td>2 days</td>
-                                <td><span class="status pending"></span> Pending</td>
-                                <td>$ 0.00</td>
-                                <td><button class="details-btn">Details</button></td>
-                    </tr>
-                    <tr>
-                                <td>02</td>
-                                <td>Sudage Party</td>
-                                <th>Birthday</th>
-                                <td>
-                                <img src="../assets/icons/flash-circle.png" alt="Razib Rahman" class="customer-img" />
-                                Razib Rahman
-                                </td>
-                                <td>4 hours</td>
-                                <td><span class="status pending"></span> Pending</td>
-                                <td>$ 0.00</td>
-                                <td><button class="details-btn">Details</button></td>
-                    </tr>            
+                    <?php
+        // Assuming $conn is your database connection
+        $parties = get_all_parties($conn); // Fetch parties from the function
+        
+        if (!empty($parties)) {
+            foreach ($parties as $index => $party) {
+                // Calculate the status class
+                $status_class = $party['status'] ? 'completed' : 'pending';
+                // Set the status text
+                $status_text = $party['status'] ? 'Completed' : 'Pending';
+                
+                // Using heredoc syntax for cleaner HTML output
+                $row = <<<HTML
+                <tr>
+                    <td>{sprintf('%02d', $index + 1)}</td>
+                    <td>{$party['party_name']}</td>
+                    <th>{$party['party_type']}</th>
+                    <td><img src="../assets/icons/flash-circle.png" alt="Razib Rahman" class="customer-img" />{$party['customer_name']}</td>
+                    <td>{$party['remaining_time']}</td>
+                    <td><span class='status {$status_class}'></span> {$status_text}</td>
+                    <td>{$party['balance']}</td>
+                    <td><button class='details-btn'>Details</button></td>
+                </tr>
+HTML;
+                echo $row; // Output the row
+            }
+        } else {
+            echo "<tr><td colspan='8'>No parties found.</td></tr>";
+        }
+        ?>          
                 </tbody>    
             </table>
 

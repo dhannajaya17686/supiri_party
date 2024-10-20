@@ -6,6 +6,10 @@
     require_once '../includes/sessions.config.inc.php';
     require_once '../config/constants.config.php';
     require_once '../includes/log-in/log-in.cntr.inc.php';
+    require_once '../includes/stat-req/stat-req.cntr.inc.php';
+    require_once '../config/database.config.php';
+    //Get party information
+    require_once '../includes/manage-parties/get-parties/get-all-parties.cntr.inc.php';
     if(!is_user_authenticated()){
         header('Location: '.ROOT_URL.'log-in.php');
     }
