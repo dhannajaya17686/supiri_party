@@ -1,7 +1,7 @@
 <div class="upcoming-parties-admin-box">
             <div class="action-row">           
                 <h3>Upcoming Parties</h3>
-                <button class="details-btn">Show more</button>
+                <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/parties.php"; ?>'">Add new tasks</button>
             </div>       
             <table class="party-table">
                 <thead>

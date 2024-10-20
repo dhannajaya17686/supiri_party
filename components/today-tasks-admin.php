@@ -1,7 +1,7 @@
 <div class="assigned-tasks-admin-box">
             <div class="action-row">           
                 <h3>Sunday 23 May</h3>
-                <button class="details-btn">Add new tasks</button>
+                <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/tasks.php"; ?>'">Add new tasks</button>
             </div>
             <div class="task-list">            
                 <?php
@@ -26,9 +26,6 @@
                     } else {
                         echo "<tr><td colspan='8'>No parties found.</td></tr>";
                     }
-
-
-
                 ?>
             </div>
         </div>
