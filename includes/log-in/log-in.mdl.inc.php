@@ -19,10 +19,10 @@ function get_user(object $conn, string $username, string $role) {
             $query = "SELECT admin_id AS id, username,fullname, 'admin' AS role FROM admin WHERE username = ?";
             break;
         case 'employee':
-            $query = "SELECT emp_id AS id, username, 'employee' AS role FROM employee WHERE username = ?";
+            $query = "SELECT emp_id AS id, username,fullname, 'employee' AS role FROM employee WHERE username = ?";
             break;
         case 'user':
-            $query = "SELECT user_id AS id, username, 'user' AS role FROM users WHERE username = ?";
+            $query = "SELECT user_id AS id, username,fullname,'user' AS role FROM users WHERE username = ?";
             break;
         default:
             return null; // Invalid role

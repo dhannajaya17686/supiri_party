@@ -3,8 +3,10 @@
       <img class="top-left-box logo" alt="" src="../assets/img/cake.svg">
       <div class="top-left-box text">Supiri Party</div>
     </div>
-    <div class="link-box">                               
-        <ul>
+    <div class="link-box">    
+        <!--ADMIN RENDERING-->                           
+        <?php if ($_SESSION["user_role"] == "admin") { ?>
+          <ul>                     
             <li>
               <img src="../assets/icons/flash-circle.png" />
               <p>Dashboard</p>
@@ -14,21 +16,13 @@
               <p>Revenue</p>
             </li>
             <li>
-              <img src="../assets/icons/calendar.png" />
-              <p>Calendar</p>
-            </li>
-            <li>
-              <img src="../assets/icons/task-square.png" />
-              <p>Tasks</p>
-            </li>
-            <li>
               <img src="../assets/icons/task-square.png" />
               <p>Tasks</p>
             </li>
             <hr/>
             <li>
               <img src="../assets/icons/strongbox.png" />
-              <p>Parrties</p>
+              <p>Parties</p>
             </li>
             <hr/>
             <li>
@@ -40,6 +34,43 @@
               <p>Manage Customers</p>
             </li>
           </ul>
+        <?php } ?>
+        <!--USER RENDERING-->
+        <?php if ($_SESSION["user_role"] == "user") { ?>
+          <ul>                     
+            <li>
+              <img src="../assets/icons/flash-circle.png" />
+              <p>Dashboard</p>
+            </li>
+            <li>
+              <img src="../assets/icons/dollar-square.png" />
+              <p>Payments</p>
+            </li>
+            <hr/>
+            <li>
+              <img src="../assets/icons/strongbox.png" />
+              <p>Parties</p>
+            </li>
+          </ul>
+        <?php } ?>
+        <!--EMPLOYEE RENDERING-->
+        <?php if ($_SESSION["user_role"] == "employee") { ?>
+          <ul>                     
+            <li>
+              <img src="../assets/icons/flash-circle.png" />
+              <p>Dashboard</p>
+            </li>
+            <li>
+              <img src="../assets/icons/task-square.png" />
+              <p>Tasks</p>
+            </li>
+            <hr/>
+            <li>
+              <img src="../assets/icons/strongbox.png" />
+              <p>Parties</p>
+            </li>
+          </ul>
+        <?php } ?>
     </div>
     <div class="profile-box">
       <div class="profile-circle">

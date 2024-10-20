@@ -7,5 +7,9 @@ CREATE TABLE `party`.`employee` (
   `username` VARCHAR(45) NULL,
   PRIMARY KEY (`emp_id`)
 );
-username` VARCHAR(45) NULL AFTER `password`,
-CHANGE COLUMN `name` `fullname` VARCHAR(100) NULL DEFAULT NULL ;
+
+INSERT INTO `party`.`employee` (`fullname`, `phone`, `email`, `password`, `username`)
+VALUES 
+  ('John Doe', '123-456-7890', 'johndoe@example.com', 'password123', 'johndoe'),
+  ('Jane Smith', '987-654-3210', 'janesmith@example.com', 'password456', 'janesmith'),
+  ('Bob Johnson', '555-555-5555', 'bobjohnson@example.com', 'password789', 'bobjohnson');
