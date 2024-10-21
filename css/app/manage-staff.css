@@ -47,35 +47,111 @@
     background-color: lightcoral;
 }
 
-.main-content .manage-staff-box .user-common-greet-box {
-    position: relative;
+.main-content .page-common-title-box {
     width: 100%;
     display: flex;
+    margin-right: 2rem;
     flex-direction: row;
     justify-content: space-between; /* Distributes space between items */
     align-items: center; /* Vertically centers items */
     padding: 1rem; /* Adds padding around the box */
 }
 
-.main-content .manage-staff-box .user-common-greet-box h1 {
+.main-content .page-common-title-box h1 {
     font-weight: 600;
     color: var(--primary-color);
     margin: 0; /* Removes default margin */
-    padding-right: 1rem; /* Space between text and button */
-    flex-grow: 1; /* Takes available space */
+    padding-right: 1rem; /* Space between text and button */ /* Takes available space */
 }
 
-.main-content .manage-staff-box .user-common-greet-box .details-btn {
+.main-content .page-common-title-box .details-btn {
     padding: 0.8rem 1.5rem; /* Button padding */
-    font-size: 1rem;
+    font-size: 1.7rem;
     cursor: pointer;
     background-color: var(--primary-color);
     color: white;
+    margin-right: 3rem;
     border: none;
     border-radius: 0.5rem; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-.main-content .manage-staff-box .user-common-greet-box .details-btn:hover {
+.main-content  .page-common-title-box .details-btn:hover {
     background-color: #5a4cae; /* Darker color on hover */
+}
+
+/*------------------------------STYLING RELATED TO POP UP BOX -----------------------*/
+  
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000; /* Ensures the overlay is on top */
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+
+  padding: 20px;
+  background: #fff;
+  border-radius: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  width: 40%;
+  height: 90%;
+  margin-top: 2rem;
+  text-align: center;
+
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: var(--primary-color);
+}
+
+.form-input, .btn-submit, .btn-generate {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-group {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .popup {
+      width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup {
+      width: 90%;
+  }
 }

@@ -13,23 +13,23 @@
     
 ?>
 <head>
-    <link rel="stylesheet" href="../css/pop-up.css" type="text/css">
     <script src="../js/ui/togglePopUp.js" defer></script>
     <script src="../js/ui/editWindowStaff.js" defer></script>
     <script src="../js/funcs/generateUserName.js" defer></script>
     <script src="../js/ui/confirmDelete.js" defer></script>
+    <script src="../js/funcs/validateStaffInput.js"defer></script>
     <title>SP | Manage Staff</title>
 </head>
 <body>
     <div class="main-content">
         <!--The component to add the title-->    
-        <div class="user-common-greet-box">
+        <div class="page-common-title-box">
             <h1>Manage Staff Members<span style="margin-left: 1.5rem;"></span>👨🏻</h1>
-            <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/parties.php"; ?>'">Add new tasks</button>
+            <button class="details-btn" onclick="window.location.hash = '#popup1';"><span style="font-weight:800;font-size: 1.7rem;margin-right:2rem">+</span>Add new tasks</button>
         </div>
         <!--Component to render all employees-->
         <div class="manage-staff-box">
-        <table class="party-table">
+            <table class="party-table">
                 <thead>
                     <tr>
                         <th>Username</th>
@@ -54,7 +54,12 @@
                                 <td><?php echo htmlspecialchars($employee['phone']); ?></td>
                                 <td><?php echo htmlspecialchars($employee['fullname']); ?></td>
                                 <td>
-                                    <button class="details-btn">Edit</button>
+                                    <button class="details-btn" onclick="openEditStaff('<?php echo htmlspecialchars($employee['username']); ?>', 
+                                        '<?php echo htmlspecialchars($employee['email']); ?>', 
+                                        '<?php echo htmlspecialchars($employee['phone']); ?>', 
+                                        '<?php echo htmlspecialchars($employee['fullname']); ?>');window.location.hash = '#popup2';">
+                                    Edit
+                                    </button>
                                     <form method="POST" action="../logic/staff-logic/delete-staff.logic.php" style="display:inline;" onsubmit="return confirmDelete('<?php echo $employee['username']; ?>');">
                                         <input type="hidden" name="username" value="<?php echo htmlspecialchars($employee['username']); ?>">
                                         <button type="submit" class="details-btn-delete">Delete</button>
@@ -71,39 +76,73 @@
       
                 </tbody>    
             </table>
-            <?php edit_staff_creation_errors();show_delete_success() ?>
         </div>
-    </div>
-    <!--
-    <button class="btn-open-popup" onclick="togglePopup()">
-      Add new Staff members
-    </button>
--->
-      
-    <!--<div id="popupOverlay" class="overlay-container ">
-        <div class="popup-box">
-            <h2 style="color: green;">Add Staff Members </h2>
-            <form class="form-container" action="../logic/staff-logic/add-staff.logic.php" method="post">
-                <label class="form-label" for="fullname">Full Name:</label>
-                <input class="form-input" type="text" placeholder="Enter Your Full Name" id="fullname" name="fullname" required>
-                <div class="input-group">
-                    <label class="form-label" for="username">Username:</label>
-                    <input class="form-input" type="text" placeholder="Enter Your Username" id="username" name="username" required>
-                    <button type="button" class="btn-generate" onclick="generateUserName()">Generate</button>
+        <!--The component which pops to add new staff-->
+        <div id="popup1" class="overlay">
+            <form class="popup main-form" action="../logic/staff-logic/add-staff.logic.php" method="post" onsubmit="return validateSignUpInput()">
+                <a class="close" href="#">&times;</a>
+                <div class="main-form-sub-text">Add Staff Members</div>
+                
+                <div class="main-form-input-group">  
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" name="fullname" id="fullname" placeholder="Enter your Name" >
+                    <span id="fullname_error" class="password-error"></span>
                 </div>
-                <label class="form-label" for="password">Password:</label>
-                <input class="form-input" type="password" placeholder="Enter Your Password" id="password" name="password" required>
-                <label class="form-label" for="phone">Phone:</label>
-                <input class="form-input" type="tel" placeholder="Enter Your Phone Number" id="phone" name="phone" required>
-                <label class="form-label" for="email">Email:</label>
-                <input class="form-input" type="email" placeholder="Enter Your Email" id="email" name="email" required>
+
+                <div class="main-form-input-group">         
+                    <label for="username">Username:</label>
+                    <div class="main-signup-input-group">
+                        <input type="text" name="username" id="username" placeholder="Enter Username">
+                        <button type="button" class="btn-generate" onclick="generateUserName()">Generate</butto>
+                    </div>
+                    <span id="username_error" class="password-error"></span>
+                </div>
+
+                <div class="main-form-input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                    <span id="password_error" class="password-error"></span>
+                </div>
+                
+    
+                <div class="main-form-input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                    <span id="email_error" class="password-error"></span>
+                </div>
+
+                <div class="main-form-input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter Phone Number" >
+                    <span id="phone_error" class="password-error"></span>
+                </div>
+
                 <button class="btn-submit" type="submit">Submit</button>
-                <button class="btn-close-popup" onclick="togglePopup()">Close</button>
             </form>
+        </div>
+        <!--The component which pops to edit staff-->
+        <div id="popup2" class="overlay">
+            <form class="popup main-form" action="../logic/staff-logic/edit-employee.logic.php" method="post">
+                <a class="close" href="#">&times;</a>
+                <div class="main-form-sub-text">Edit Staff Members</div>
+                <input type="hidden" id="edit-username" name="username">
+                
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="email" required>
+
+                <label for="edit-phone">Phone:</label>
+                <input type="tel" id="edit-phone" name="phone" required>
+
+                <label for="edit-fullname">Full Name:</label>
+                <input type="text" id="edit-fullname" name="fullname" required>
+
+                <button type="submit">Save Changes</button>
+            </form> 
         </div>
     </div>
     <?php check_staff_creation_errors() ?>
-
+    <?php edit_staff_creation_errors();show_delete_success() ?>
+<!--
     <?php $employee_list = request_all_staff_detail($conn);
     ?>
     <table border="1" cellpadding="10" cellspacing="0">
