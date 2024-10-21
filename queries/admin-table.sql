@@ -1,3 +1,4 @@
+CREATE DATABASE `party`;
 CREATE TABLE `party`.`admin` (
   `admin_id` INT NOT NULL AUTO_INCREMENT,
   `fullname` VARCHAR(100) NULL DEFAULT NULL, 

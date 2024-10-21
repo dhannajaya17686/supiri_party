@@ -4,13 +4,13 @@ CREATE TABLE `party`.`parties` (
   `location` VARCHAR(255) NOT NULL,
   `total_cost` DECIMAL(10, 2) NOT NULL,
   `balance` DECIMAL(10, 2) NOT NULL,
-  `customer_id` INT NOT NULL,
+  `customer_id` INT,
   `admin_id` INT NOT NULL,
   `party_name` VARCHAR(100) NOT NULL,
   `party_type` VARCHAR(100) NOT NULL,
   `status` BOOLEAN NOT NULL DEFAULT 0,
   PRIMARY KEY (`party_id`),
-  FOREIGN KEY (`customer_id`) REFERENCES `users`(`user_id`),
+  FOREIGN KEY (`customer_id`) REFERENCES `users`(`user_id`) ON DELETE SET NULL,
   FOREIGN KEY (`admin_id`) REFERENCES `admin`(`admin_id`)
 );
 INSERT INTO `party`.`parties` (`date`, `location`, `total_cost`, `balance`, `customer_id`, `admin_id`, `party_name`, `party_type`, `status`)

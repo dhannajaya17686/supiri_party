@@ -1,4 +1,4 @@
-function validateStaffInput() {
+function validateCustomerInput() {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const fullname = document.getElementById("fullname").value.trim();

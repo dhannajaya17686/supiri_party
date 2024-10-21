@@ -1,8 +1,8 @@
 <?php
 
 function show_customer_delete_success() {
-    if(isset($_GET["staff-delete"]) && $_GET["staff-delete"] === "success"){
-        echo "<script>alert('Staff delete success')</script>";
+    if(isset($_GET["customer-delete"]) && $_GET["customer-delete"] === "success"){
+        echo "<script>alert('Customer delete success')</script>";
 }};
 
 

@@ -29,7 +29,7 @@
               <img src="../assets/icons/building-4.png" />
               <p>Manage Staff</p>
             </li>
-            <li>
+            <li onclick="window.location.href='<?php echo ROOT_URL . "app/customers.php"; ?>'">
               <img src="../assets/icons/people.png" />
               <p>Manage Customers</p>
             </li>
