@@ -1,6 +1,6 @@
 <div class="assigned-tasks-admin-box">
             <div class="action-row">           
-                <h3>Sunday 23 May</h3>\
+                <h3>Sunday 23 May</h3>
                 <?php if ($_SESSION["user_role"] == "admin") { ?>
                     <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/tasks.php"; ?>'">Add new tasks</button>  
                 </button>

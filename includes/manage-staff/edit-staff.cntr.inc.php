@@ -17,6 +17,7 @@ function is_email_valid($email){
 }
 
 function request_edit_staff_memeber(mysqli $conn,string $username,string $email,string $phone,string $fullname){
+    require_once 'edit-staff.mdl.inc.php';
     edit_staff_memeber($conn, $username, $email, $phone, $fullname);
 }
 

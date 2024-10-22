@@ -14,13 +14,13 @@
         header("Location:".ROOT_URL."app/index.php");
         exit();
     }
-?>  
+?>
 
 <head>
     <script src="../js/funcs/generateUserName.js" defer></script>
     <script src="../js/ui/confirmDelete.js" defer></script>
     <script src="../js/funcs/validateCustomerInput.js" defer></script>
-    <script src="../js/ui/editWindowStaff.js"defer></script>
+    <script src="../js/ui/editWindowStaff.js" defer></script>
     <title>SP | Manage Customer</title>
 </head>
 <body>

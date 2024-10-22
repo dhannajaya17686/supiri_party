@@ -1,6 +1,7 @@
 <div id="popup2" class="overlay">
+
             <form class="popup main-form" action="../logic/customer-logic/edit-customer.logic.php" method="post">
-                <a class="close" href="#">&times;</a>
+                <a class="close" href="#"> &times; </a>
                 <div class="main-form-sub-text">Edit Customers</div>
                 <input type="hidden" id="edit-username" name="username">
                 

@@ -7,29 +7,25 @@
         <!--ADMIN RENDERING-->                           
         <?php if ($_SESSION["user_role"] == "admin") { ?>
           <ul>                     
-            <li>
+            <li onclick="window.location.href='<?php echo ROOT_URL."app/index.php"; ?>'">
               <img src="../assets/icons/flash-circle.png" />
               <p>Dashboard</p>
             </li>
-            <li>
-              <img src="../assets/icons/dollar-square.png" />
-              <p>Revenue</p>
-            </li>
-            <li  onclick="window.location.href='<?php echo ROOT_URL . "app/tasks.php"; ?>'">
+            <li  onclick="window.location.href='<?php echo ROOT_URL."app/tasks.php"; ?>'">
               <img src="../assets/icons/task-square.png" />
               <p>Tasks</p>
             </li>
             <hr/>
-            <li>
+            <li onclick="window.location.href='<?php echo ROOT_URL."app/parties.php"; ?>'">
               <img src="../assets/icons/strongbox.png" />
               <p>Parties</p>
             </li>
             <hr/>
-            <li onclick="window.location.href='<?php echo ROOT_URL . "app/manage-staff.php"; ?>'">
+            <li onclick="window.location.href='<?php echo ROOT_URL."app/manage-staff.php";?>'">
               <img src="../assets/icons/building-4.png" />
               <p>Manage Staff</p>
             </li>
-            <li onclick="window.location.href='<?php echo ROOT_URL . "app/customers.php"; ?>'">
+            <li onclick="window.location.href='<?php echo ROOT_URL."app/customers.php";?>'">
               <img src="../assets/icons/people.png" />
               <p>Manage Customers</p>
             </li>
@@ -79,6 +75,6 @@
     </div>
 
     <form action="../logic/log-out.logic.php" method="post" class="log-out-box">
-        <button type="submit" id="log-in-form-submit"">Log Out</button>
+        <button type="submit" id="log-in-form-submit">Log Out</button>
     </form>
 </nav>

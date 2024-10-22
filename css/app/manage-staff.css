@@ -101,18 +101,18 @@
 }
 
 .popup {
-
   padding: 20px;
   background: #fff;
   border-radius: 1.5rem;
   position: relative;
   transition: all 0.3s ease-in-out;
   width: 40%;
-  height: 90%;
+  height: 100%;
   margin-top: 2rem;
   text-align: center;
-
+  overflow-y: auto; /* Enables vertical scrolling */
 }
+
 
 .popup .close {
   position: absolute;

@@ -24,7 +24,7 @@
                                 <td><?php echo htmlspecialchars($customer['phone']); ?></td>
                                 <td><?php echo htmlspecialchars($customer['fullname']); ?></td>
                                 <td>
-                                    <button class="details-btn" onclick="openEditCustomer('<?php echo htmlspecialchars($employee['username']); ?>', 
+                                    <button class="details-btn" onclick="openEditCustomer('<?php echo htmlspecialchars($customer['username']); ?>', 
                                         '<?php echo htmlspecialchars($customer['email']); ?>', 
                                         '<?php echo htmlspecialchars($customer['phone']); ?>', 
                                         '<?php echo htmlspecialchars($customer['fullname']); ?>');window.location.hash = '#popup2';">

@@ -5,54 +5,33 @@
     require_once '../config/constants.config.php';
     require_once '../includes/sessions.config.inc.php';
     require_once '../config/database.config.php';
+    require_once '../components/base.php';
     require_once '../includes/manage-parties/add-party/add-party.cntr.inc.php';
     require_once '../includes/manage-parties/add-party/add-party.view.inc.php';
-    require_once '../includes/manage-parties/get-parties/get-all-parties.view.inc.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/funcs/generatePartyOptions.js" defer></script>
-    <title>Parties</title>
+    <title>SP | Parties</title>
 </head>
 <body>
-<h3>Add new Parties </h3>
-<form action="../logic/party-logic/add-party-admin.logic.php" method="POST">
-    <label for="date">Party Date:</label>
-    <input type="date" name="date" required>
+    <div class="main-content">
+        <div class="page-common-title-box">
+            <h1>Manage Parties<span style="margin-left: 1.5rem;"></span>🗳️</h1>
+            <?php if ($_SESSION["user_role"] == "admin") { ?>
+                <button class="details-btn" onclick="window.location.hash = '#popup1';">
+                    <span style="font-weight:800;font-size: 1.7rem;margin-right:2rem">+</span>
+                    Assign New Parties
+                </button>
+            <?php } ?>
+        </div>
 
-    <label for="location">Party Location:</label>
-    <input type="text" name="location" required>
-
-    <label for="total_cost">Total Cost (in whole numbers):</label>
-    <input type="number" name="total_cost" required>
-
-    <label for="party_name">Party Name</label>
-    <input type="text" name="party_name" required>
-
-    <label for="party_type">Select Party Types:</label>
-    <select name="party_types" id="party_type" required>
-        
-    </select>
-
-    <label for="customer">Select Customer:</label>
-    <select name="customer_id" required>
-        <?php echo request_customer_info($conn) ?>
-    </select>
-
-    <button type="submit">Add Party</button>
-</form>
-<?php show_party_creation_errors() ?>
-<h1>Party List </h1>
-<?php echo get_all_parties($conn) ?>
-</body>
-</html>
-
-
-
-
+        <!--The component to add parties -->
+        <?php require_once '../components/parties/add-new-parties.php' ?>
+        <!--SHow all the details-->
+        <?php require_once '../components/parties/get-all-parties.php' ?>
+    </div>
+    <?php show_party_creation_errors() ?>
 
 
 
