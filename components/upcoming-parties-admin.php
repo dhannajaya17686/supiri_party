@@ -19,7 +19,7 @@
                 <tbody>
                 <?php
                     
-                    $parties = get_all_parties($conn);
+                    $parties = request_get_all_parties($conn);
 
                     if (!empty($parties)) {
                         $count = 0;

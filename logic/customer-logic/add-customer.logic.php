@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         };
         header("Location: ".ROOT_URL."app/customers.php?customer-add=success");
         set_customer($conn,$username,$fullname,$password,$phone,$email);
-        $conn = null; 
+       
         die();
         }catch(Exeption $e){
         die("Query Failed: ".$e->getMessage());

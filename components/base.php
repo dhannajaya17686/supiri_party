@@ -11,6 +11,7 @@
     require_once '../includes/manage-tasks/get-tasks/get-all-tasks.cntr.inc.php';
     //Get party information
     require_once '../includes/manage-parties/get-parties/get-all-parties.cntr.inc.php';
+    
     if(!is_user_authenticated()){
         header('Location: '.ROOT_URL.'log-in.php');
     }

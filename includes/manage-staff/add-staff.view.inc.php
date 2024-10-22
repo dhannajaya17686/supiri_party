@@ -16,4 +16,3 @@ function check_staff_creation_errors() {
 }
 
 
-?>

@@ -15,7 +15,7 @@
               <img src="../assets/icons/dollar-square.png" />
               <p>Revenue</p>
             </li>
-            <li>
+            <li  onclick="window.location.href='<?php echo ROOT_URL . "app/tasks.php"; ?>'">
               <img src="../assets/icons/task-square.png" />
               <p>Tasks</p>
             </li>

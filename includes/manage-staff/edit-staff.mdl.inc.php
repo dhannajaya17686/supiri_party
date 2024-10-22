@@ -6,7 +6,6 @@ function edit_staff_memeber(mysqli $conn,string $username,string $email,string $
     $stmt->bind_param("ssss", $email, $phone, $fullname, $username);
     $stmt->execute();
     $stmt->close();
-    $conn->close();
     return true;
 }
 

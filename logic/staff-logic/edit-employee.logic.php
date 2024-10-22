@@ -31,9 +31,9 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
             header("Location: ".ROOT_URL."app/manage-staff.php");
             die();
         };
-        header("Location: ".ROOT_URL."app/manage-staff.php?staff-edit=success");
+        
         request_edit_staff_memeber($conn,$username,$email,$phone,$fullname);
-        $conn = null; 
+        header("Location: ".ROOT_URL."app/manage-staff.php?staff-edit=success");
         die();
         }catch(Exeption $e){
         die("Query Failed: ".$e->getMessage());

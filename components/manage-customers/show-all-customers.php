@@ -30,7 +30,7 @@
                                         '<?php echo htmlspecialchars($customer['fullname']); ?>');window.location.hash = '#popup2';">
                                     Edit
                                     </button>
-                                    <form method="POST" style="display:inline;" action="../logic/customer-logic/delete-customer.logic.php" style="display:inline;" onsubmit="return confirmDelete('<?php echo $customer['username']; ?>');">
+                                    <form method="POST" style="display:inline;" action="../logic/customer-logic/delete-customer.logic.php" style="display:inline;" onsubmit="return confirmDelete('customer','<?php echo $customer['username']; ?>');">
                                         <input type="hidden" name="username" value="<?php echo htmlspecialchars($customer['username']); ?>">
                                         <button type="submit" class="details-btn-delete">Delete</button>
                                     </form>

@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         $_SESSION["user_username"] = htmlspecialchars($result["username"]);
         $_SESSION["user_role"] =$result["role"];
         $_SESSION["user_fullname"] =$result["fullname"];
-        $conn = null; 
+       
         header("Location: ".ROOT_URL."log-in.php?login=success");
         header("Location:".ROOT_URL."app/index.php");
         die();

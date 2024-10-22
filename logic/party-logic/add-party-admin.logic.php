@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         
         request_add_party($conn,$date,$location,$total_cost,$balance,$customer_id,$admin_id,$party_name,$party_type);
         header("Location: ".ROOT_URL."app/parties.php?party-add=success");
-        $conn = null; 
+     
         die();
         }catch(Exeption $e){
         die("Query Failed: ".$e->getMessage());

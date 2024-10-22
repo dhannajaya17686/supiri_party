@@ -10,7 +10,6 @@ function get_all_customer_info(mysqli $conn) {
     }
     
     $stmt->close();
-    $conn->close();
     return $employees;
 }
 ?>

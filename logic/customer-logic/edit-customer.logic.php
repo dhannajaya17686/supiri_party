@@ -34,7 +34,6 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         };
         header("Location: ".ROOT_URL."app/customers.php?customer-edit=success");
         request_edit_customer_memeber($conn,$username,$email,$phone,$fullname);
-        $conn = null; 
         die();
         }catch(Exeption $e){
         die("Query Failed: ".$e->getMessage());
@@ -44,4 +43,4 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
     header("Location: ".ROOT_URL."log-in.php");
     die();
 }
-?>
+

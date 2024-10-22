@@ -1,3 +1,3 @@
-function confirmDelete(username) {
-    return confirm(`Are you sure you want to delete the staff member: ${username}?`);
+function confirmDelete(title,username) {
+    return confirm(`Are you sure you want to delete the ${title}: ${username}?`);
 }

@@ -11,7 +11,6 @@ function get_all_employees_info(mysqli $conn) {
     }
     
     $stmt->close();
-    $conn->close();
     return $employees;
 }
 
