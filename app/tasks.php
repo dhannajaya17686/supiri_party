@@ -21,14 +21,30 @@
     <div class="main-content">
         <div class="page-common-title-box">
             <h1>Manage Tasks<span style="margin-left: 1.5rem;"></span>🗳️</h1>
-            <button class="details-btn" onclick="window.location.hash = '#popup1';"><span style="font-weight:800;font-size: 1.7rem;margin-right:2rem">+</span>Assign New Tasks</button>
+            <?php if ($_SESSION["user_role"] == "admin") { ?>
+                <button class="details-btn" onclick="window.location.hash = '#popup1';">
+                    <span style="font-weight:800;font-size: 1.7rem;margin-right:2rem">+</span>
+                    Assign New Tasks
+                </button>
+            <?php } ?>
         </div>
-        <!--Component to add new tasks-->
-        <?php require_once '../components/tasks/add-new-tasks.php' ?>
-        <!--Compomemnt to view all tasks-->
-        <?php require_once '../components/tasks/show-all-tasks.php' ?>
-        <!--Component to edit tasks -->
-        <?php require_once '../components/tasks/edit-tasks.php' ?>
-        <?php edit_task_editing_errors()  ?>
+        <!--ADMIN RENDERING-->
+        <?php if ($_SESSION["user_role"] == "admin") {?>
+            <!--Component to add new tasks-->
+            <?php require_once '../components/tasks/add-new-tasks.php' ?>
+            <!--Compomemnt to view all tasks-->
+            <?php require_once '../components/tasks/show-all-tasks.php' ?>
+            <!--Component to edit tasks -->
+            <?php require_once '../components/tasks/edit-tasks.php' ?>
+            <?php edit_task_editing_errors()  ?>
+        <?php }
+        ?>
+        <!--EMPLOYEE RENDERMING-->
+        <?php if ($_SESSION["user_role"] == "employee") {?>
+            <!--Compomemnt to view all tasks-->
+            <?php require_once '../components/tasks/show-all-tasks.php' ?>
+        <?php }
+        ?>
+
     </div>
 </body>

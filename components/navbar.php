@@ -56,19 +56,15 @@
         <!--EMPLOYEE RENDERING-->
         <?php if ($_SESSION["user_role"] == "employee") { ?>
           <ul>                     
-            <li>
+            <li onclick="window.location.href='<?php echo ROOT_URL . "app/index.php"; ?>'">
               <img src="../assets/icons/flash-circle.png" />
               <p>Dashboard</p>
             </li>
-            <li>
+            <li onclick="window.location.href='<?php echo ROOT_URL . "app/tasks.php"; ?>'">
               <img src="../assets/icons/task-square.png" />
               <p>Tasks</p>
             </li>
             <hr/>
-            <li>
-              <img src="../assets/icons/strongbox.png" />
-              <p>Parties</p>
-            </li>
           </ul>
         <?php } ?>
     </div>

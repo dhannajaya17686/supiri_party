@@ -1,7 +1,11 @@
 <div class="upcoming-parties-admin-box">
             <div class="action-row">           
                 <h3>Upcoming Parties</h3>
-                <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/parties.php"; ?>'">Add new tasks</button>
+                <?php if ($_SESSION["user_role"] == "admin") { ?>
+                    <button class="details-btn" onclick="window.location.href='<?php echo ROOT_URL . "app/parties.php"; ?>'">Add new partiess</button>    
+                </button>
+                <?php } ?>
+
             </div>       
             <table class="party-table">
                 <thead>
